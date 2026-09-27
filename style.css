@@ -19,25 +19,26 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   line-height: 1.6;
+  position: relative;
 }
 
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 8%;
-  background: rgba(15, 23, 42, 0.9);
+  padding: 1.2rem 8%;
+  background: rgba(15, 23, 42, 0.95);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  z-index: 100;
-  backdrop-filter: blur(8px);
+  z-index: 999;
 }
 
 .logo {
   font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  color: var(--text-main);
 }
 
 .logo span {
@@ -48,21 +49,26 @@ body {
 .nav-links a {
   color: var(--text-sub);
   text-decoration: none;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
   font-size: 0.9rem;
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 .nav-links a:hover, .btn-nav {
   color: var(--accent);
 }
 
+/* HERO */
 .hero {
   padding: 5rem 8% 4rem;
   max-width: 1000px;
+  position: relative;
+  z-index: 10;
 }
 
 .badge {
+  display: inline-block;
   background: rgba(56, 189, 248, 0.1);
   color: var(--accent);
   padding: 0.35rem 0.8rem;
@@ -73,7 +79,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.25;
   margin: 1.25rem 0;
@@ -81,37 +87,58 @@ body {
 
 .hero p {
   color: var(--text-sub);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin-bottom: 2rem;
 }
 
-.hero-cta a {
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 20;
+}
+
+.hero-cta a, .project-links a {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  margin-right: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  pointer-events: auto !important;
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #0f172a;
+  background: var(--accent) !important;
+  color: #0f172a !important;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
+  background: var(--accent-hover) !important;
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
-  border: 1px solid var(--border);
-  color: var(--text-main);
+  border: 1px solid var(--border) !important;
+  color: var(--text-main) !important;
+  background: transparent !important;
 }
 
+.btn-secondary:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  transform: translateY(-2px);
+}
+
+/* PROJECTS */
 .projects-section, .tech-section {
   padding: 4rem 8%;
   border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 10;
 }
 
 .section-title h2 {
@@ -133,12 +160,14 @@ body {
 }
 
 .tags span {
+  display: inline-block;
   background: #334155;
   color: #e2e8f0;
   font-size: 0.75rem;
   padding: 0.25rem 0.6rem;
   border-radius: 4px;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-details h3 {
@@ -153,7 +182,7 @@ body {
 
 .project-highlights {
   list-style-type: none;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 2rem;
 }
 
 .project-highlights li {
@@ -162,6 +191,7 @@ body {
   font-size: 0.95rem;
 }
 
+/* SKILLS */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -185,10 +215,13 @@ body {
   font-size: 0.9rem;
 }
 
+/* FOOTER */
 .footer {
   padding: 4rem 8%;
   border-top: 1px solid var(--border);
   text-align: center;
+  position: relative;
+  z-index: 20;
 }
 
 .footer p {
@@ -196,9 +229,21 @@ body {
   margin: 0.5rem 0 1.5rem;
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
 .footer-links a {
   color: var(--accent);
   text-decoration: none;
-  margin: 0 1rem;
   font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  pointer-events: auto !important;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
 }
